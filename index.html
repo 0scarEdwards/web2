@@ -5,141 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f5; /* Light gray background */
-            overflow: hidden; /* Hide overflow to prevent horizontal scrolling */
-        }
-
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Comic Sans MS", sans-serif;
+            line-height: 1.4;
+            margin: 0 auto;
+            max-width: 860px;
             height: 100%;
-            background-image: url('https://i.imgur.com/kPg0rE9.png'); /* Star image URL */
-            z-index: -1;
+            overflow: hidden;
+            background-color: #f5f5f5;
         }
 
-        .container {
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .death-star-top,
-        .death-star-bottom {
-            width: 100px;
-            height: 100px;
-            background: repeating-linear-gradient(
-                45deg,
-                #ff6666,
-                #ff6666 10px,
-                #ffcc66 10px,
-                #ffcc66 20px
-            );
-            border-radius: 50%;
-            animation: spin 5s linear infinite, changeColors 5s linear infinite;
-            margin-bottom: 20px;
-        }
-
-        .death-star-bottom {
-            margin-top: 20px;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes changeColors {
-            0%, 100% {
-                background: repeating-linear-gradient(
-                    45deg,
-                    #ff6666,
-                    #ff6666 10px,
-                    #ffcc66 10px,
-                    #ffcc66 20px
-                );
-            }
-            25% {
-                background: repeating-linear-gradient(
-                    45deg,
-                    #ff0000,
-                    #ff0000 10px,
-                    #00ff00 10px,
-                    #00ff00 20px
-                );
-            }
-            50% {
-                background: repeating-linear-gradient(
-                    45deg,
-                    #0000ff,
-                    #0000ff 10px,
-                    #ffff00 10px,
-                    #ffff00 20px
-                );
-            }
-            75% {
-                background: repeating-linear-gradient(
-                    45deg,
-                    #ff00ff,
-                    #ff00ff 10px,
-                    #00ffff 10px,
-                    #00ffff 20px
-                );
-            }
-        }
-
-        h1, p, .blank {
-            color: #333;
-            padding: 10px;
-            margin: 5px 0;
-        }
-
-        .textbox {
-            width: 80%;
-            max-width: 400px;
-            background-color: #fff;
-            padding: 10px;
+        .center {
             text-align: center;
         }
 
-        audio {
-            width: 100%;
-            margin-top: 20px;
+        .intro {
+            font-size: 4em;
+        }
+
+        .max {
+            display: block;
+            width: 860px;
+            word-wrap: break-word;
+        }
+
+        .bg1 {
+            background-image: url("https://i.imgur.com/YUPql5N.gif");
+        }
+
+        .bg2 {
+            background-image: url("https://i.imgur.com/SHZe50s.gif");
+        }
+
+        a {
+            color: #000000;
+        }
+
+        #wm-ipp #wm-ipp-inside {
+            margin: 0 6px;
+            border: 5px solid #000;
+            border-top: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            -moz-box-shadow: 1px 1px 4px #333;
+            -webkit-box-shadow: 1px 1px 4px #333;
+            box-shadow: 1px 1px 4px #333;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .container {
+            width: 1000px;
+            height: 100%;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        h1,
+        h2,
+        h3,
+        p,
+        a {
+            color: yellow;
+        }
+
+        span.line {
+            color: red;
+        }
+
+        .cursor {
+            cursor: url(https://i.imgur.com/RUE567I.gif), auto;
+        }
+
+        /* @group Blink */
+        .blink {
+            -webkit-animation: blink .75s linear infinite;
+            -moz-animation: blink .75s linear infinite;
+            -ms-animation: blink .75s linear infinite;
+            -o-animation: blink .75s linear infinite;
+            animation: blink .75s linear infinite;
+        }
+
+        @-webkit-keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @-moz-keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @-ms-keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @-o-keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 1; }
+            50.01% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        /* @end */
+
+        /* for footer */
+        #main {
+            min-height: 90vh;
         }
     </style>
-    <title>Pixelated Color Changing Death Star</title>
+    <title>Your Title Here</title>
 </head>
-<body>
-    <div class="stars"></div>
-
-    <div class="container">
-        <div class="death-star-top"></div>
-
-        <h1>Welcome to OccaConnect</h1>
-        <p>Your one-stop shop for Retro Dial Up ISP Services.</p>
-
-        <p class="blank">[Read More About Us Here:]</p>
-
-        <div class="textbox">.</div>
-
-        <div class="death-star-bottom"></div>
-    </div>
-
-    <audio controls>
-        <source src="your-audio-file.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-</body>
-</html>
+<body class="center bg2 max">
+    <div id="main">
+        <h1 class="tab blink">Welcome to my website!</h1>
+        <div id="home">
+            <h4>
+                <a href="#home">Home</a> <span class="line">|</span>
+                <a href="#about">About Me</a> <span class="line">|</span>
+                <a href="#working">Projects I am Working On</a> <span class="line">|</span>
+                <a href="#made">Stuff I Made</a>
+            </h4>
+        </div>
+        <img class="intro" id="about" src="https://i.imgur.com/VzhrVJt.gif">
+        <h2>This is the base file for the 90s themed website I want to make</h2>
+        <h2 id="working">Projects I am working on</h2>
+        <p></p>
+        <h2 id="made">Stuff I made</h
